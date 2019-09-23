@@ -13,7 +13,7 @@ public class Complexe {
     }
 
 
-    public Complexe() {        //constructeur sans paramètre
+    public Complexe() {      //constructeur sans paramètre
         this.x = 0.0;
         this.y = 0.0;
     }
@@ -76,7 +76,7 @@ public class Complexe {
      * @return la valeur de rho du nombre complexe
      */
     public double getRho(){
-        return (Math.sqrt(x*x + y*y));
+        return (Math.sqrt(getX()*getX() + getY()*getY()));
     }
 
 
@@ -92,7 +92,7 @@ public class Complexe {
      * @return la valeur de theta du nombre complexe
      */
     public double getTheta(){
-        return (Math.asin(y/Math.sqrt(x*x + y*y)));
+        return (Math.asin(y/Math.sqrt(getX()*getX() + getY()*getY())));
     }
 
 
@@ -108,7 +108,7 @@ public class Complexe {
      * @return une chaîne de caractères représentant le nombre complexe sous sa forme algébrique
      */
     public String toString() {
-        return "(" + this.x + " + i*" + this.y + ")";
+        return "(" + this.getX() + " + i*" + this.getY() + ")";
     }
 
 
@@ -116,6 +116,21 @@ public class Complexe {
      * @return une chaîne de caractères représentant le nombre complexe sous sa forme trigonométrique
      */
     public String toStringTrigo() {
-        return "(" + this.rho + " *e^(i*" + this.theta + "))";
+        return "(" + this.getRho() + "(cos(" + this.getTheta() + ") + i sin(" + this.getTheta() + ")))";
     }
+
+    /* Si on veut définir un constructeur qui prend le module et l'argument d'un nombre complexe en
+    paramètre, il faut connaître d'abord la partie réelle x et la partie imaginaire y du nombre complexe.
+    On ne va donc pas faire de constructeur, mais plutôt la méthode instanceTrigo ci-dessous : */
+
+    /**
+     * @param rho le module du nombre complexe
+     * @param theta l'argument du nombre complexe
+     * @return une instance de Complexe après l'avoir créée avec les paramètres passés
+     */
+    public Complexe instanceTrigo(double rho, double theta){
+        return new Complexe(rho*Math.cos(theta), rho*Math.sin(theta));
+    }
+
+
 }
