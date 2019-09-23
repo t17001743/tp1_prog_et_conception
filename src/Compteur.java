@@ -1,3 +1,5 @@
+/* Exercice 1 */
+
 public class Compteur {
 
     private int chiffre;
