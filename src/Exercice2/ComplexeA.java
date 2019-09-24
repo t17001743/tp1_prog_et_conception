@@ -1,20 +1,19 @@
-/* Exercice 2 - Version de la classe où il existe les 4 attributs x, y, rho, theta */
+package Exercice2;
+/* Exercice 2 - Version de la classe où il n'existe que les attributs x et y */
 
-public class ComplexeC implements Complexe{
+public class ComplexeA implements Complexe {
 
-    double x;      //partie réelle
-    double y;      //partie imaginaire
-    double rho;    //module
-    double theta;  //argument
+    double x;  //partie réelle
+    double y;  //partie imaginaire
 
 
-    public ComplexeC(double x, double y) {
+    public ComplexeA(double x, double y) {
         this.x = x;
         this.y = y;
     }
 
 
-    public ComplexeC() {      //constructeur sans paramètre
+    public ComplexeA() {      //constructeur sans paramètre
         this.x = 0.0;
         this.y = 0.0;
     }
@@ -24,8 +23,8 @@ public class ComplexeC implements Complexe{
      * @param b un nombre complexe
      * @return addition de a et b
      */
-    public static ComplexeC plus(ComplexeC a, ComplexeC b){
-        return new ComplexeC(a.getX() + b.getX(), a.getY() + b.getY());
+    public static ComplexeA plus(ComplexeA a, ComplexeA b){
+        return new ComplexeA(a.getX() + b.getX(), a.getY() + b.getY());
     }
 
 
@@ -34,8 +33,8 @@ public class ComplexeC implements Complexe{
      * @param b un nombre complexe
      * @return multiplication de a et b
      */
-    public ComplexeC fois(ComplexeC a, ComplexeC b){
-        return new ComplexeC(a.getRho()*b.getRho(), a.getTheta()+b.getTheta());
+    public ComplexeA fois(ComplexeA a, ComplexeA b){
+        return new ComplexeA(a.getRho()*b.getRho(), a.getTheta()+b.getTheta());
     }
 
 
@@ -46,8 +45,6 @@ public class ComplexeC implements Complexe{
 
     public void setX(double x){
         this.x = x;
-        this.rho = Math.sqrt(this.x*this.x + getY()*getY());
-        this.theta = (Math.asin(y/Math.sqrt(this.x*this.x + getY()*getY())));
     }
 
 
@@ -58,32 +55,28 @@ public class ComplexeC implements Complexe{
 
     public void setY(double y){
         this.y = y;
-        this.rho = Math.sqrt(getX()*getX() + this.y*this.y);
-        this.theta = (Math.asin(y/Math.sqrt(getX()*getX() + this.y*this.y)));
     }
 
 
     public double getRho(){
-        return this.rho;
+        return (Math.sqrt(getX()*getX() + getY()*getY()));
     }
 
 
     public void setRho(double rho){
-        this.rho = rho;
-        this.x = this.rho*Math.cos(this.theta);
-        this.y = this.rho*Math.sin(this.theta);
+        this.x = rho*Math.cos(getTheta());
+        this.y = rho*Math.sin(getTheta());
     }
 
 
     public double getTheta(){
-        return this.theta;
+        return (Math.asin(y/Math.sqrt(getX()*getX() + getY()*getY())));
     }
 
 
     public void setTheta(double theta){
-        this.theta = theta;
-        this.x = this.rho*Math.cos(this.theta);
-        this.y = this.rho*Math.sin(this.theta);
+        this.x = getRho()*Math.cos(theta);
+        this.y = getRho()*Math.sin(theta);
     }
 
 
@@ -102,13 +95,20 @@ public class ComplexeC implements Complexe{
         return "(" + this.getRho() + "(cos(" + this.getTheta() + ") + i sin(" + this.getTheta() + ")))";
     }
 
+
     /* Si on veut définir un constructeur qui prend le module et l'argument d'un nombre complexe en
     paramètre, il faut connaître d'abord la partie réelle x et la partie imaginaire y du nombre complexe.
     On ne va donc pas faire de constructeur, mais plutôt la méthode instanceTrigo ci-dessous : */
 
 
-    public ComplexeC instanceTrigo(double rho, double theta){
-        return new ComplexeC(rho*Math.cos(theta), rho*Math.sin(theta));
+    /**
+     * @param rho le module du nombre complexe
+     * @param theta l'argument du nombre complexe
+     * @return une instance de Exercice2.ComplexeA après l'avoir créée avec les paramètres passés
+     */
+    public ComplexeA instanceTrigo(double rho, double theta){
+        return new ComplexeA(rho*Math.cos(theta), rho*Math.sin(theta));
     }
+
 
 }

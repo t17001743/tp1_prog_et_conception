@@ -1,3 +1,4 @@
+package Exercice1;
 /* Exercice 1 */
 
 public class Compteur {

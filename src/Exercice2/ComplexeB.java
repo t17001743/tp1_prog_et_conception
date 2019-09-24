@@ -1,6 +1,7 @@
+package Exercice2;
 /* Exercice 2 - Version de la classe où il n'existe que les attributs rho et theta */
 
-public class ComplexeB implements Complexe{
+public class ComplexeB implements Complexe {
 
     double rho;    //module
     double theta;  //argument
