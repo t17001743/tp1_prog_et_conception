@@ -8,6 +8,7 @@ public class Variable implements ExpressionBooleenne {
 
     public Variable(){
         // constructeur par défaut
+        variableBool = false;
     }
 
     public Variable(boolean variableBool){
@@ -23,7 +24,8 @@ public class Variable implements ExpressionBooleenne {
 
     @Override
     public void affiche(){
-        System.out.print(variableBool);
+        if(variableBool) System.out.print("VRAI");
+        else System.out.print("FAUX");
     }
 
 

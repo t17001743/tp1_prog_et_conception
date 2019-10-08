@@ -29,7 +29,7 @@ public class Main {
         /*------------------------------------------------------Exercice 3------------------------------------------------------*/
 
         Variable v = new Variable(true);
-        ExpressionBooleenne e = new ExpressionBinaire(new Non(v), new OperateurOu(), new Constante());
+        ExpressionBooleenne e = new ExpressionBinaire(new Non(v), new OperateurOu(), Constante.FAUX);
         System.out.println("\n");
         e.affiche();
         System.out.println();     //affiche (NON(VRAI) OU FAUX)

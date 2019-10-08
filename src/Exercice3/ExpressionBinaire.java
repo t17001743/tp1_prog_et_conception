@@ -13,15 +13,8 @@ public class ExpressionBinaire implements ExpressionBooleenne {
 
     @Override
     public boolean evalue() {
-        if(operateur.getName().equals("ET")) {
-            if (operateur.applique(true, true)) return true;
-            return false;
-        }
-        if(operateur.getName().equals("OU")){
-            if(operateur.applique(false, true) || operateur.applique(true, false) || operateur.applique(true, true)) return true;
-            return false;
-        }
-        return false;
+        //en fonction de la table de vérité de l'opérateur "ET"
+        return operateur.applique(exp1.evalue(), exp2.evalue());
     }
 
     @Override
