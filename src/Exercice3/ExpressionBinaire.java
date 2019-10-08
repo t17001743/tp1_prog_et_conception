@@ -13,11 +13,25 @@ public class ExpressionBinaire implements ExpressionBooleenne {
 
     @Override
     public boolean evalue() {
+        if(operateur.getName().equals("ET")) {
+            if (operateur.applique(true, true)) return true;
+            return false;
+        }
+        if(operateur.getName().equals("OU")){
+            if(operateur.applique(false, true) || operateur.applique(true, false) || operateur.applique(true, true)) return true;
+            return false;
+        }
         return false;
     }
 
     @Override
     public void affiche() {
-        System.out.println("(" + exp1 + operateur + exp2 + ")" );
+        System.out.print("(");
+        exp1.affiche();
+        System.out.print(" ");
+        System.out.print(operateur.getName());
+        System.out.print(" ");
+        exp2.affiche();
+        System.out.println(")" );
     }
 }

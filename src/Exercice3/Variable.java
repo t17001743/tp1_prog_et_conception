@@ -23,7 +23,7 @@ public class Variable implements ExpressionBooleenne {
 
     @Override
     public void affiche(){
-        System.out.println(variableBool);
+        System.out.print(variableBool);
     }
 
 

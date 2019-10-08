@@ -30,6 +30,7 @@ public class Main {
 
         Variable v = new Variable(true);
         ExpressionBooleenne e = new ExpressionBinaire(new Non(v), new OperateurOu(), new Constante());
+        System.out.println("\n");
         e.affiche();
         System.out.println();     //affiche (NON(VRAI) OU FAUX)
         System.out.println(e.evalue());   //affiche : false

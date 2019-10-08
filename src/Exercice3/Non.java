@@ -17,7 +17,8 @@ public class Non implements ExpressionBooleenne{
 
     @Override
     public void affiche(){
-        if(exp.evalue()) System.out.println(exp);
-        System.out.println("NON(" + exp + ")");
+        System.out.print("NON(");
+        exp.affiche();
+        System.out.print(")");
     }
 }
