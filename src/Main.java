@@ -1,6 +1,8 @@
 /* TP1 Programmation et Conception (17/09/19) */
 
+import Exercice3.Constante;
 import Exercice3.ExpressionBooleenne;
+import Exercice3.Non;
 import Exercice3.Variable;
 
 public class Main {
