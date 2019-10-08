@@ -1,4 +1,4 @@
-/* TP1 Programmation et Conception (17/09/19) */
+/* TP1 Programmation et Conception (17/09/19) THIEL Samantha L3 Informatique*/
 
 import Exercice3.*;
 
