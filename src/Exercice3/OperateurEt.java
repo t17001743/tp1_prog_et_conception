@@ -2,14 +2,16 @@ package Exercice3;
 
 public class OperateurEt implements OperateurBinaire {
 
+    public OperateurEt() {
+    }
 
     @Override
     public boolean applique(boolean e1, boolean e2) {
-        return false;
+        return (e1 && e2);
     }
 
     @Override
     public String getName() {
-        return null;
+        return "ET";
     }
 }

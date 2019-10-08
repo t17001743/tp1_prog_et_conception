@@ -1,9 +1,6 @@
 /* TP1 Programmation et Conception (17/09/19) */
 
-import Exercice3.Constante;
-import Exercice3.ExpressionBooleenne;
-import Exercice3.Non;
-import Exercice3.Variable;
+import Exercice3.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,7 +29,7 @@ public class Main {
         /*------------------------------------------------------Exercice 3------------------------------------------------------*/
 
         Variable v = new Variable(true);
-        ExpressionBooleenne e = new ExpressionBinaire(new Non(v), new OperateurOu(), Constante.FAUX);
+        ExpressionBooleenne e = new ExpressionBinaire(new Non(v), new OperateurOu(), new Constante());
         e.affiche();
         System.out.println();     //affiche (NON(VRAI) OU FAUX)
         System.out.println(e.evalue());   //affiche : false

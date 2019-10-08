@@ -12,4 +12,15 @@ public class Constante extends Variable {
         this.VRAI = vrai;
         this.FAUX = faux;
     }
+
+    @Override
+    public boolean evalue(){
+        return super.evalue();
+    }
+
+
+    @Override
+    public void affiche(){
+        super.affiche();
+    }
 }

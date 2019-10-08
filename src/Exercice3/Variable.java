@@ -27,7 +27,7 @@ public class Variable implements ExpressionBooleenne {
     }
 
 
-    private void setValeur(boolean variableBool){   //on ne peut pas l'utiliser dans la classe Constante qui hérite de Variable car private
+    public void setValeur(boolean variableBool){
         this.variableBool = variableBool;
     }
 }
