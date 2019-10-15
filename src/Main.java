@@ -6,6 +6,8 @@ import Exercice4.LombricSain;
 import Exercice5.Date;
 import Exercice5.Duree;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -58,16 +60,19 @@ public class Main {
         }
         System.out.println("\n");
 
-        a.grandit(10);
+        ArrayList<Lombric> listeLombrics = new ArrayList<Lombric>();
+        listeLombrics.add(a);
+        listeLombrics.add(b);
+        Lombric.grandissons(10);
         System.out.println("Agrandissement des lombrics :");
-        System.out.println("Le lombric a fait maintenant " + a.getLongueur() + "cm.");
-        System.out.println("Le lombric b fait maintenant " + b.getLongueur() + "cm.");
+        System.out.println("Le lombric a fait maintenant " + listeLombrics.get(a.getLongueur()) + "cm.");
+        System.out.println("Le lombric b fait maintenant " + listeLombrics.get(b.getLongueur()) + "cm.");
 
 
         /*------------------------------------------------------Exercice 5------------------------------------------------------*/
 
-        Date.setMaintenant(new Date(1002131548));
-        Date.setMaintenant(Date.getMaintenant().plus(Duree.MOIS));
+       /* Date.setMaintenant(new Date(1002131548));
+        Date.setMaintenant(Date.getMaintenant().plus(Duree.MOIS)); */
 
     }
 }

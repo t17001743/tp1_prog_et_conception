@@ -12,12 +12,15 @@ public class TicketSimple {
     }
 
 
+    /**
+     * @return le prix du ticket
+     */
     public float prix(){
         return this.prixTicket;
     }
 
 
-    public boolean valide(){
+    /*public boolean valide(){
 
-    }
+    }*/
 }

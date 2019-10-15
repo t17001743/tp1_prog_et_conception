@@ -1,18 +1,21 @@
 package Exercice4;
+import java.util.ArrayList;
 
 public class Lombric {
 
     private int longueur;
-    /*Pour faire grandir tous les lombrics existants en même temps, on les stocke dans un tableau de Lombric*/
+    public static ArrayList<Lombric> listeLombrics = null;
 
     // Constructeur sans paramètres
     public Lombric(){
         this.longueur = 1;  //à sa naissance, le lombric mesure 1 cm
+        ArrayList<Lombric> listeLombrics = new ArrayList<Lombric>();
     }
 
 
     public Lombric(int longueur){
         this.longueur = longueur;
+        ArrayList<Lombric> listeLombrics = new ArrayList<Lombric>();
     }
 
 
@@ -34,11 +37,11 @@ public class Lombric {
     /**
      * @param n ajoute n centimètres à la longueur du lombric
      */
-    public void grandit(int n){
+    private void grandit(int n){
         this.longueur += n;
     }
     /*Pour que cette méthode ne puisse plus être utilisée pour faire grandir un seul lombric indépendamment des autres,
-    on fait une boucle for sur le tableau et on augmente la longueur de chaque lombric de n cm.*/
+    on la met en private*/
 
 
     /**
@@ -62,7 +65,9 @@ public class Lombric {
     /**
      * @param n le nombre de cm avec lequel il faut faire grandir tous les lombrics en même temps
      */
-    public void grandissons(int n){
-        grandit(n);
+    public static void grandissons(int n){
+        for(Lombric l : listeLombrics){
+            l.grandit(n);
+        }
     }
 }

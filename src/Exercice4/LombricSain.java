@@ -15,12 +15,12 @@ public class LombricSain extends Lombric {
      */
     public Lombric accouplement(Lombric b, boolean scission){
         this.scission = scission;
-        if(b.getLongueur() >= 10 && !this.scission) return new Lombric();
+        if(b.getLongueur() >= 10 && !this.scission) return new LombricSain();
         return null;
     }
 
 
     public Lombric coupe(){
-        return super.coupe();
+        return super.coupe();   //changer le retour en LombricSain
     }
 }
