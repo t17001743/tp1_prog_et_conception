@@ -3,6 +3,8 @@
 import Exercice3.*;
 import Exercice4.Lombric;
 import Exercice4.LombricSain;
+import Exercice5.Date;
+import Exercice5.Duree;
 
 public class Main {
     public static void main(String[] args) {
@@ -60,6 +62,12 @@ public class Main {
         System.out.println("Agrandissement des lombrics :");
         System.out.println("Le lombric a fait maintenant " + a.getLongueur() + "cm.");
         System.out.println("Le lombric b fait maintenant " + b.getLongueur() + "cm.");
+
+
+        /*------------------------------------------------------Exercice 5------------------------------------------------------*/
+
+        Date.setMaintenant(new Date(1002131548));
+        Date.setMaintenant(Date.getMaintenant().plus(Duree.MOIS));
 
     }
 }

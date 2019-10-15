@@ -59,6 +59,9 @@ public class Lombric {
     }
 
 
+    /**
+     * @param n le nombre de cm avec lequel il faut faire grandir tous les lombrics en même temps
+     */
     public void grandissons(int n){
         grandit(n);
     }
