@@ -5,6 +5,8 @@ import Exercice4.Lombric;
 import Exercice4.LombricSain;
 import Exercice5.Date;
 import Exercice5.Duree;
+import Exercice6.GrosMachin;
+import Exercice6.PetitBidule;
 
 import java.util.ArrayList;
 
@@ -46,7 +48,7 @@ public class Main {
 
         /*------------------------------------------------------Exercice 4------------------------------------------------------*/
 
-        LombricSain a = new LombricSain();
+        /*LombricSain a = new LombricSain();
         a.setLongueur(12);  //a est un lombric adulte
         System.out.println("\n");
         System.out.println("Le lombric a fait " + a.getLongueur() + "cm.");
@@ -66,13 +68,23 @@ public class Main {
         Lombric.grandissons(10);
         System.out.println("Agrandissement des lombrics :");
         System.out.println("Le lombric a fait maintenant " + listeLombrics.get(a.getLongueur()) + "cm.");
-        System.out.println("Le lombric b fait maintenant " + listeLombrics.get(b.getLongueur()) + "cm.");
+        System.out.println("Le lombric b fait maintenant " + listeLombrics.get(b.getLongueur()) + "cm.");*/
 
 
         /*------------------------------------------------------Exercice 5------------------------------------------------------*/
 
        /* Date.setMaintenant(new Date(1002131548));
         Date.setMaintenant(Date.getMaintenant().plus(Duree.MOIS)); */
+
+
+        /*------------------------------------------------------Exercice 6------------------------------------------------------*/
+
+        GrosMachin oung = new GrosMachin();
+        PetitBidule pfuit = new PetitBidule();
+        pfuit.bipbip();  //fait bipbip
+        oung.glouglou();  //fait glouglou
+        pfuit.bipbip();  //fait glouglou
+        pfuit.bipbip();  //fait bipbip
 
     }
 }
