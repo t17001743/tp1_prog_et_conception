@@ -1,7 +1,15 @@
 package Exercice6;
 
-public abstract class Bidule {
+public class Bidule extends Machin{
 
-    public abstract void bipbip();
-    public abstract void coincoin();
+    public Bidule() {
+    }
+
+    public void bipbip(){
+        System.out.println("Bipbip");
+    }
+
+    public void coincoin(){
+        System.out.println("Coincoin");
+    }
 }

@@ -1,6 +1,11 @@
 package Exercice6;
 
-public abstract class Machin {
+public class Machin {
 
-    public abstract void glouglou();
+    public Machin() {
+    }
+
+    public void glouglou(){
+        System.out.println("Glouglou");
+    }
 }
