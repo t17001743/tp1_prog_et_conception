@@ -73,18 +73,18 @@ public class Main {
 
         /*------------------------------------------------------Exercice 5------------------------------------------------------*/
 
-       /* Date.setMaintenant(new Date(1002131548));
-        Date.setMaintenant(Date.getMaintenant().plus(Duree.MOIS)); */
+        Date.setMaintenant(new Date(1002131548));
+        Date.setMaintenant(Date.getMaintenant().plus(Duree.MOIS));
 
 
         /*------------------------------------------------------Exercice 6------------------------------------------------------*/
 
-        GrosMachin oung = new GrosMachin();
+        /*GrosMachin oung = new GrosMachin();
         PetitBidule pfuit = new PetitBidule();
         pfuit.bipbip();  //fait bipbip
         oung.glouglou();  //fait glouglou
         pfuit.bipbip();  //fait glouglou !
-        pfuit.bipbip();  //fait bipbip
+        pfuit.bipbip();  //fait bipbip*/
 
     }
 }

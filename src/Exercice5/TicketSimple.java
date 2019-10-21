@@ -2,13 +2,15 @@ package Exercice5;
 
 public class TicketSimple {
 
-    private int dureeValidite;
+    private int dureeValidite;   //durée de validité du ticket après validation
     private float prixTicket;
+    private Date dateLimiteValidite;
 
 
     public TicketSimple(int dureeValidite, float prixTicket) {
         this.dureeValidite = dureeValidite;
         this.prixTicket = prixTicket;
+        this.dateLimiteValidite = null;
     }
 
 
@@ -20,7 +22,14 @@ public class TicketSimple {
     }
 
 
-    /*public boolean valide(){
-
-    }*/
+    /**
+     * @return vrai si le ticket est valide, faux sinon
+     */
+    public boolean valide(){
+        if(dateLimiteValidite == null){
+            dateLimiteValidite = Date.getMaintenant().plus(dureeValidite);
+            return true;
+        }
+        return Date.getMaintenant().avant(dateLimiteValidite);
+    }
 }
