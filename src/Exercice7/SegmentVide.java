@@ -1,6 +1,6 @@
 package Exercice7;
 
-public class SegmentVide extends SegmentContinu {
+/*public class SegmentVide extends SegmentContinu {
 
     public SegmentVide() {
     }
@@ -12,4 +12,4 @@ public class SegmentVide extends SegmentContinu {
     public Segment simplification(){
 
     }
-}
+}*/

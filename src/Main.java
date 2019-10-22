@@ -1,31 +1,63 @@
 /* TP1 Programmation et Conception (17/09/19) THIEL Samantha L3 Informatique*/
 
-import Exercice7.Segment;
+/*import Exercice7.Segment;
 import Exercice7.SegmentDiscontinu;
 import Exercice7.SegmentPlein;
-import Exercice7.SegmentVide;
+import Exercice7.SegmentVide;*/
+
+import Exercice1.Compteur;
+import Exercice2.ComplexeA;
 
 public class Main {
     public static void main(String[] args) {
 
+        /*------------------------------------------------------Exercice 1------------------------------------------------------*/
+
+        System.out.println('\n');
+
+        Compteur c1 = new Compteur(1000);
+
+        System.out.print("Compteur initial : ");
+        c1.affiche();
+        System.out.println('\n');
+
+        c1.dec();
+        System.out.print("Compteur après incrémentation : ");
+        c1.affiche();
+        System.out.println('\n');
+
+        Compteur c2 = new Compteur(1000);
+        if(c2.egale(c1)) System.out.println("Les deux compteurs c1 et c2 sont égaux.");
+        else System.out.println("Les deux compteurs c1 et c2 sont différents.");
+        System.out.println('\n');
+
+        System.out.println("Copie du compteur c1...");
+        Compteur copiec1 =  new Compteur(c1);
+        System.out.print("Le nouveau compteur c3 (copie de c1) est égal à : ");
+        copiec1.affiche();
+        System.out.println('\n');
+
+        System.out.println('\n');
+
+
         /*------------------------------------------------------Exercice 2------------------------------------------------------*/
 
-        /*Exercice2.ComplexeA z0 = new Exercice2.ComplexeA();
-        Exercice2.ComplexeA z1 = new Exercice2.ComplexeA(2, 3);
-        Exercice2.ComplexeA z2 = z0.instanceTrigo(5, 0.5);
+        /*ComplexeA z0 = new ComplexeA();
+        ComplexeA z1 = new ComplexeA(2, 3);
+        ComplexeA z2 = z0.instanceTrigo(5, 0.5);
 
         System.out.println("\n");
         System.out.println("5e^(i0.5) est sous forme exponentielle. Il s'agit de "+ z2 + " en forme algébrique.");
         System.out.println("\n");
 
         // addition de z1 et z2
-        Exercice2.ComplexeA addition = z0.plus(z1, z2);
+        ComplexeA addition = z0.plus(z1, z2);
         System.out.println(z1 + " + " + z2 + " = " + addition.toString());
 
         System.out.println("\n");
 
         // multiplication de z1 et z2
-        Exercice2.ComplexeA multiplication = z0.fois(z1, z2);
+        ComplexeA multiplication = z0.fois(z1, z2);
         System.out.println(z1 + " * " + z2 + " = " + multiplication.toStringTrigo());*/
 
 
@@ -49,10 +81,10 @@ public class Main {
         System.out.println("Le lombric a fait " + a.getLongueur() + "cm.");
         Lombric b = new Lombric(11);   //b est aussi un lombric adulte
         System.out.println("Le lombric b fait " + b.getLongueur() + "cm.");
-        Lombric c = a.accouplement(b, false);
+        Lombric c1 = a.accouplement(b, false);
         System.out.println("\n");
         if(a.getLongueur() >= 10) {
-            if (c == null) System.out.println("Accouplement impossible.");
+            if (c1 == null) System.out.println("Accouplement impossible.");
             else System.out.println("Création d'un nouveau lombric.");
         }
         System.out.println("\n");
@@ -88,11 +120,11 @@ public class Main {
 
         /*------------------------------------------------------Exercice 7------------------------------------------------------*/
 
-        SegmentVide vide = new SegmentVide();
+        /*SegmentVide vide = new SegmentVide();
         SegmentPlein plein = new SegmentPlein();
         SegmentDiscontinu s = new SegmentDiscontinu(plein, new SegmentDiscontinu(new SegmentDiscontinu(plein, vide), plein));
         System.out.println(s.remplissage());
-        Segment s2 = s.simplification();
+        Segment s2 = s.simplification();*/
 
     }
 }

@@ -1,6 +1,6 @@
 package Exercice7;
 
-public class SegmentDiscontinu extends Segment {
+/*public class SegmentDiscontinu extends Segment {
 
     public SegmentDiscontinu(Segment s1, Segment s2) {
         super();
@@ -15,4 +15,4 @@ public class SegmentDiscontinu extends Segment {
     public Segment simplification(){
 
     }
-}
+}*/

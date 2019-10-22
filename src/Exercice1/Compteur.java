@@ -11,7 +11,7 @@ public class Compteur {
      * Constructeur qui initialise le compteur à 0
      */
     public Compteur() {
-        this.suivant = null;
+        this.chiffre = 0;
     }
 
 
@@ -27,7 +27,7 @@ public class Compteur {
      * Constructeur de copie
      */
     public Compteur(Compteur c){
-        this.suivant = new Compteur(c);
+        this.chiffre = c.chiffre;
     }
 
 
@@ -35,10 +35,10 @@ public class Compteur {
      * Incrémente le compteur d'une unité
      */
     public void inc(){
-        if(this.chiffre <= 9) this.chiffre++;
-        else{
+        this.chiffre++;
+        if(this.chiffre > 9){
             this.chiffre = 0;
-            //this.suivant
+            this.suivant.inc(); //récursivité
         }
     }
 
@@ -47,10 +47,13 @@ public class Compteur {
      * Décrémente le compteur d'une unité
      */
     public void dec(){
-        if(this.chiffre > 0) this.chiffre--;
-       /* else{
-
-        }*/
+        if(this.chiffre == 0){      //si l'unité du compteur est égale à 0
+            if(this.suivant == null) System.out.println ("Décrémentation impossible : compteur à 0.");       //si le compteur est à zéro (aucun autre chaînon)
+            this.chiffre = 9;   //sinon l'unité est maintenant égale à 9
+            this.suivant = null;  //et le dernier chaînon est supprimé
+            dec();   //récursivité
+        }
+        this.chiffre--;   // à mettre en haut, même principe que inc
     }
 
 
@@ -58,10 +61,7 @@ public class Compteur {
      * Affiche la valeur du compteur (les chiffres dans le bon ordre)
      */
     public void affiche(){
-        while(this.suivant != null){
-            System.out.println(this.chiffre);
-            this.suivant.dec();
-        }
+        System.out.print(this.chiffre);
     }
 
 
@@ -69,7 +69,7 @@ public class Compteur {
      * Indique si c et le compteur sur lequel on appelle la méthode ont la même valeur
      */
     public boolean egale(Compteur c){
-        if(c.equals(this.suivant)) return true;
+        if(c.chiffre == this.chiffre) return true;
         return false;
     }
 

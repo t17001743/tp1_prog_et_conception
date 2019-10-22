@@ -1,6 +1,6 @@
 package Exercice7;
 
-public class SegmentPlein extends SegmentContinu {
+/*public class SegmentPlein extends SegmentContinu {
 
     public SegmentPlein() {
     }
@@ -12,4 +12,4 @@ public class SegmentPlein extends SegmentContinu {
     public Segment simplification(){
 
     }
-}
+}*/
