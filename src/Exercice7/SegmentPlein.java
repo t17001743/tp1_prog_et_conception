@@ -1,15 +1,8 @@
 package Exercice7;
 
-/*public class SegmentPlein extends SegmentContinu {
-
-    public SegmentPlein() {
-    }
+public class SegmentPlein extends SegmentContinu {
 
     public float remplissage(){
         return 1;
     }
-
-    public Segment simplification(){
-
-    }
-}*/
+}

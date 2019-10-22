@@ -1,19 +1,16 @@
 /* TP1 Programmation et Conception (17/09/19) THIEL Samantha L3 Informatique*/
 
-/*import Exercice7.Segment;
+import Exercice7.Segment;
 import Exercice7.SegmentDiscontinu;
 import Exercice7.SegmentPlein;
-import Exercice7.SegmentVide;*/
-
-import Exercice1.Compteur;
-import Exercice2.ComplexeA;
+import Exercice7.SegmentVide;
 
 public class Main {
     public static void main(String[] args) {
 
         /*------------------------------------------------------Exercice 1------------------------------------------------------*/
 
-        System.out.println('\n');
+        /*System.out.println('\n');
 
         Compteur c1 = new Compteur(1000);
 
@@ -37,7 +34,7 @@ public class Main {
         copiec1.affiche();
         System.out.println('\n');
 
-        System.out.println('\n');
+        System.out.println('\n');*/
 
 
         /*------------------------------------------------------Exercice 2------------------------------------------------------*/
@@ -120,11 +117,11 @@ public class Main {
 
         /*------------------------------------------------------Exercice 7------------------------------------------------------*/
 
-        /*SegmentVide vide = new SegmentVide();
+        SegmentVide vide = new SegmentVide();
         SegmentPlein plein = new SegmentPlein();
         SegmentDiscontinu s = new SegmentDiscontinu(plein, new SegmentDiscontinu(new SegmentDiscontinu(plein, vide), plein));
         System.out.println(s.remplissage());
-        Segment s2 = s.simplification();*/
+        Segment s2 = s.simplification();
 
     }
 }

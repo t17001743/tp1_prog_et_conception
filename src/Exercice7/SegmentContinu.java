@@ -1,7 +1,12 @@
 package Exercice7;
 
-public abstract class SegmentContinu extends Segment{
+public abstract class SegmentContinu implements Segment{
 
-    public SegmentContinu() {
+    @Override
+    public abstract float remplissage();
+
+    @Override
+    public Segment simplification() {
+        return this;
     }
 }
