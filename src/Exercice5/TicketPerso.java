@@ -1,12 +1,11 @@
 package Exercice5;
 
-public class TicketPerso {
+public class TicketPerso extends TicketRechargeable {
 
-    private int recharge ;
     private TicketSimple abonnement;
 
     public TicketPerso(){
-        this.recharge = 0;    //initialise la recharge à 0 voyage
+        super(0);    //initialise la recharge à 0 voyage
     }
 
 
@@ -17,7 +16,7 @@ public class TicketPerso {
      */
     public boolean abonnement(int duree, float prix){
         if(abonnement == null){
-            abonnement(duree, prix);
+            abonnement = new TicketSimple(duree, prix);
             return true;
         }
         return false;
@@ -31,6 +30,6 @@ public class TicketPerso {
         if(abonnement != null){   //si l'abonnement courant existe
             return abonnement.valide();
         }
-        return false;
+        return valide();
     }
 }

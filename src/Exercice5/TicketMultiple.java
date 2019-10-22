@@ -1,9 +1,20 @@
 package Exercice5;
 
-public class TicketMultiple extends TicketRechargeable{
+public class TicketMultiple{
+
+    private TicketRechargeable ticketRechargeable;
 
     public TicketMultiple(int nbVoyages) {
-        super(nbVoyages);
+        ticketRechargeable = new TicketRechargeable(nbVoyages);
     }
 
+
+    public int reste(){
+        return ticketRechargeable.reste();
+    }
+
+
+    public boolean valide(){
+        return ticketRechargeable.valide();
+    }
 }

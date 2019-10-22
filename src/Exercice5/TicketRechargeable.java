@@ -21,7 +21,7 @@ public class TicketRechargeable{
     /**
      * @param n ajoute n voyages au ticket
      */
-    public final void recharge(int n){
+    public void recharge(int n){
         this.nbVoyages += n;
     }
 
@@ -30,11 +30,12 @@ public class TicketRechargeable{
      * @return vrai si le ticket est valide, faux sinon
      */
     public boolean valide(){
-        if(!ticket.valide()){   //si ticket invalide
-            TicketSolo nouveauTicket = new TicketSolo();  //se recrée
+        if(!ticket.valide() && nbVoyages != 0){   //si ticket invalide
+            ticket = new TicketSolo();  //se recrée
             this.nbVoyages--;   //décrémente le nombre de voyages
+            ticket.valide();
             return true;  //se valide
         }
-        return false;
+        return ticket.valide();
     }
 }
