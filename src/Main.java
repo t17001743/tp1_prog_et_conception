@@ -1,17 +1,9 @@
 /* TP1 Programmation et Conception (17/09/19) THIEL Samantha L3 Informatique*/
 
-import Exercice3.*;
-import Exercice4.Lombric;
-import Exercice4.LombricSain;
-import Exercice5.Date;
-import Exercice5.Duree;
-import Exercice5.TicketSimple;
-import Exercice6.GrosMachin;
-import Exercice6.PetitBidule;
-
-import java.util.ArrayList;
-
-import static Exercice5.Duree.HEURE;
+import Exercice7.Segment;
+import Exercice7.SegmentDiscontinu;
+import Exercice7.SegmentPlein;
+import Exercice7.SegmentVide;
 
 public class Main {
     public static void main(String[] args) {
@@ -76,12 +68,12 @@ public class Main {
 
         /*------------------------------------------------------Exercice 5------------------------------------------------------*/
 
-        Date.setMaintenant(new Date(1002131548));
+        /*Date.setMaintenant(new Date(1002131548));
         Date.setMaintenant(Date.getMaintenant().plus(Duree.MOIS));
 
         System.out.println("\n");
         TicketSimple ticketSimple = new TicketSimple(HEURE, 2);
-        System.out.println(ticketSimple.toString());
+        System.out.println(ticketSimple.toString());*/
 
 
         /*------------------------------------------------------Exercice 6------------------------------------------------------*/
@@ -96,7 +88,11 @@ public class Main {
 
         /*------------------------------------------------------Exercice 7------------------------------------------------------*/
 
-
+        SegmentVide vide = new SegmentVide();
+        SegmentPlein plein = new SegmentPlein();
+        SegmentDiscontinu s = new SegmentDiscontinu(plein, new SegmentDiscontinu(new SegmentDiscontinu(plein, vide), plein));
+        System.out.println(s.remplissage());
+        Segment s2 = s.simplification();
 
     }
 }
