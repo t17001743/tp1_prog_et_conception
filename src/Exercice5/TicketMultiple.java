@@ -6,10 +6,4 @@ public class TicketMultiple extends TicketRechargeable{
         super(nbVoyages);
     }
 
-    /**
-     * Ne fait rien
-     */
-    public void recharge(){
-        return;
-    }
 }

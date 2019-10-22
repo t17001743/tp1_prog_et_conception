@@ -5,10 +5,13 @@ import Exercice4.Lombric;
 import Exercice4.LombricSain;
 import Exercice5.Date;
 import Exercice5.Duree;
+import Exercice5.TicketSimple;
 import Exercice6.GrosMachin;
 import Exercice6.PetitBidule;
 
 import java.util.ArrayList;
+
+import static Exercice5.Duree.HEURE;
 
 public class Main {
     public static void main(String[] args) {
@@ -76,6 +79,10 @@ public class Main {
         Date.setMaintenant(new Date(1002131548));
         Date.setMaintenant(Date.getMaintenant().plus(Duree.MOIS));
 
+        System.out.println("\n");
+        TicketSimple ticketSimple = new TicketSimple(HEURE, 2);
+        System.out.println(ticketSimple.toString());
+
 
         /*------------------------------------------------------Exercice 6------------------------------------------------------*/
 
@@ -85,6 +92,11 @@ public class Main {
         oung.glouglou();  //fait glouglou
         pfuit.bipbip();  //fait glouglou !
         pfuit.bipbip();  //fait bipbip*/
+
+
+        /*------------------------------------------------------Exercice 7------------------------------------------------------*/
+
+
 
     }
 }

@@ -32,4 +32,9 @@ public class TicketSimple {
         }
         return Date.getMaintenant().avant(dateLimiteValidite);
     }
+
+
+    public String toString(){
+        return "Création d'un ticket simple valable pour une durée de " + this.dureeValidite + " et coûtant " + this.prixTicket + " euros.";
+    }
 }

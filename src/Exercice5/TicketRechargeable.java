@@ -3,6 +3,7 @@ package Exercice5;
 public class TicketRechargeable{
 
     private int nbVoyages;
+    private TicketSolo ticket;
 
     public TicketRechargeable(int nbVoyages) {
         this.nbVoyages = nbVoyages;
@@ -20,15 +21,20 @@ public class TicketRechargeable{
     /**
      * @param n ajoute n voyages au ticket
      */
-    public void recharge(int n){
+    public final void recharge(int n){
         this.nbVoyages += n;
     }
 
 
-    /*
+    /**
      * @return vrai si le ticket est valide, faux sinon
-
+     */
     public boolean valide(){
-        if
-    }*/
+        if(!ticket.valide()){   //si ticket invalide
+            TicketSolo nouveauTicket = new TicketSolo();  //se recrée
+            this.nbVoyages--;   //décrémente le nombre de voyages
+            return true;  //se valide
+        }
+        return false;
+    }
 }
