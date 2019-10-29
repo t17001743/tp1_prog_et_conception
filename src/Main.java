@@ -7,6 +7,7 @@ import Exercice7.SegmentVide;
 import Exercice8.Lampe;
 import Exercice8.PriseMultiple;
 import Exercice8.Rallonge;
+import Exercice9.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -129,7 +130,7 @@ public class Main {
 
         /*------------------------------------------------------Exercice 8------------------------------------------------------*/
 
-        Lampe l1 = new Lampe("Lampe1");
+        /*Lampe l1 = new Lampe("Lampe1");
         Lampe l2 = new Lampe("Lampe2");
         Rallonge r = new Rallonge();
         PriseMultiple p = new PriseMultiple(2);
@@ -140,7 +141,19 @@ public class Main {
         r.brancheSurPriseMurale();  //affiche "Lampe1 allumée" puis "Lampe2 allumée"
         l1.debranche();  //affiche "Lampe1 éteinte"
         l1.brancheSur(p);  //affiche "Lampe1 allumée"
-        r.debranche();  //affiche "Lampe1 éteinte" puis "Lampe2 éteinte"
+        r.debranche();  //affiche "Lampe1 éteinte" puis "Lampe2 éteinte"*/
+
+
+        /*------------------------------------------------------Exercice 9------------------------------------------------------*/
+
+        RectanglePlein r = new RectanglePlein(10, 20);
+        RectangleVide z1 = new RectangleVide(30, 25);
+        RectangleVide z2 = new RectangleVide(40, 20);
+        EllipseCirconscrite e = new EllipseCirconscrite(25, 35);
+        Agregat c1 = new AgregatHorizontal(r, z1);  //largeur : 40, hauteur : 25
+        Agregat c2 = new AgregatHorizontal(z2, e);  //largeur : 65, hauteur : 35
+        Agregat c3 = new AgregatVertical(c1, c2);  //largeur : 65, hauteur : 60
+        c3.affiche();  //affiche : Rectangle 10x20 en (0, 0). Ellipse 25:35 en (40, 25)
 
     }
 }
