@@ -4,6 +4,9 @@ import Exercice7.Segment;
 import Exercice7.SegmentDiscontinu;
 import Exercice7.SegmentPlein;
 import Exercice7.SegmentVide;
+import Exercice8.Lampe;
+import Exercice8.PriseMultiple;
+import Exercice8.Rallonge;
 
 public class Main {
     public static void main(String[] args) {
@@ -117,11 +120,27 @@ public class Main {
 
         /*------------------------------------------------------Exercice 7------------------------------------------------------*/
 
-        SegmentVide vide = new SegmentVide();
+        /*SegmentVide vide = new SegmentVide();
         SegmentPlein plein = new SegmentPlein();
         SegmentDiscontinu s = new SegmentDiscontinu(plein, new SegmentDiscontinu(new SegmentDiscontinu(plein, vide), plein));
         System.out.println(s.remplissage());
-        Segment s2 = s.simplification();
+        Segment s2 = s.simplification();*/
+
+
+        /*------------------------------------------------------Exercice 8------------------------------------------------------*/
+
+        Lampe l1 = new Lampe("Lampe1");
+        Lampe l2 = new Lampe("Lampe2");
+        Rallonge r = new Rallonge();
+        PriseMultiple p = new PriseMultiple(2);
+
+        l1.brancheSur(p);
+        l2.brancheSur(p);
+        p.brancheSur(r);
+        r.brancheSurPriseMurale();  //affiche "Lampe1 allumée" puis "Lampe2 allumée"
+        l1.debranche();  //affiche "Lampe1 éteinte"
+        l1.brancheSur(p);  //affiche "Lampe1 allumée"
+        r.debranche();  //affiche "Lampe1 éteinte" puis "Lampe2 éteinte"
 
     }
 }
