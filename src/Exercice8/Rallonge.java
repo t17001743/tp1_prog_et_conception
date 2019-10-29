@@ -2,26 +2,27 @@ package Exercice8;
 
 public class Rallonge extends ComposantElectrique implements Source{
 
-    private ComposantElectrique destination;
+    private ComposantElectrique rallonge;
 
-    public void propage(boolean etatComposant)
-    {
-        System.out.println(this + " a l'etat " + etatComposant);
-        if(etatComposant != getEtatComposant() && destination != null)
-        {
+    /**
+     * @param etatComposant l'état du composant (sous tension / hors tension)
+     */
+    public void propagation(boolean etatComposant){
+        if(etatComposant != getEtatComposant() && rallonge != null){
+            /*si la rallonge est sous tension, alors le composant relié l'est aussi, de même si elle est hors tension*/
             setEtatComposant(etatComposant);
-            System.out.println("propage a " + destination);
-            destination.propage(etatComposant);
+            rallonge.propagation(etatComposant);
         }
     }
 
-    public void ajouteElement(ComposantElectrique e)
-    {
-        destination = e;
+
+    public void ajouterElement(ComposantElectrique composant){
+        this.rallonge = composant;
     }
 
-    public void retireElement(ComposantElectrique e)
-    {
-        destination = null;
+
+    public void retirerElement(ComposantElectrique composant){
+        this.rallonge = null;
     }
 }
+

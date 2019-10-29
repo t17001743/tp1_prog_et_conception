@@ -1,6 +1,6 @@
 package Exercice8;
 
-public abstract class ComposantElectrique {
+public abstract class ComposantElectrique{
 
     private boolean etatComposant;
     private Source source;
@@ -8,7 +8,7 @@ public abstract class ComposantElectrique {
     /**
      * @param etatComposant l'état du composant (sous tension / hors tension)
      */
-    public abstract void propage(boolean etatComposant);
+    public abstract void propagation(boolean etatComposant);
 
 
     /**
@@ -19,8 +19,8 @@ public abstract class ComposantElectrique {
     }
 
 
-    public void setEtatComposant(boolean b){
-        etatComposant = b;
+    public void setEtatComposant(boolean etatComposant){
+        this.etatComposant = etatComposant;
     }
 
 
@@ -28,32 +28,32 @@ public abstract class ComposantElectrique {
      * Le composant électrique branche son unique entrée (prise mâle) sur une prise murale (femelle)
      */
     public void brancheSurPriseMurale(){
-        propage(true);
+        propagation(true);
     }
 
 
     /**
-     * @param source
+     * @param source la source électrique sur laquelle on branche le composant
      * @return
      */
-    public boolean brancheSur(Source source)
-    {
-        if(this.source == null && !etatComposant)
-        {
+    public boolean brancheSur(Source source){
+        if(this.source == null && !etatComposant){  //on vérifie que le composant n'est pas déjà branché sur une source
             this.source = source;
-            source.ajouteElement(this);
-            propage(((ComposantElectrique) this.source).getEtatComposant());
+            source.ajouterElement(this);
+            propagation(((ComposantElectrique) this.source).getEtatComposant());
             return true;
         }
-        else
-            return false;
+        return false;
     }
 
-    public void debranche()
-    {
-        if(source != null)
-            source.retireElement(this);
-        source = null;
-        propage(false);
+
+    /**
+     * Débranche le composant de sa source électrique
+     */
+    public void debranche(){
+        if(this.source != null)
+            this.source.retirerElement(this);
+        this.source = null;
+        propagation(false);
     }
 }

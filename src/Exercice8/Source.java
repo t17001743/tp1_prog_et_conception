@@ -2,7 +2,13 @@ package Exercice8;
 
 public interface Source{
 
-    void ajouteElement(ComposantElectrique e);
+    /**
+     * @param composant le composant électrique qu'on ajoute aux sources électriques
+     */
+    void ajouterElement(ComposantElectrique composant);
 
-    void retireElement(ComposantElectrique e);
+    /**
+     * @param composant le composant électrique qu'on retire des sources électriques
+     */
+    void retirerElement(ComposantElectrique composant);
 }
