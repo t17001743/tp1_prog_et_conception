@@ -130,7 +130,7 @@ public class Main {
 
         /*------------------------------------------------------Exercice 8------------------------------------------------------*/
 
-        /*Lampe l1 = new Lampe("Lampe1");
+       /* Lampe l1 = new Lampe("Lampe1");
         Lampe l2 = new Lampe("Lampe2");
         Rallonge r = new Rallonge();
         PriseMultiple p = new PriseMultiple(2);
